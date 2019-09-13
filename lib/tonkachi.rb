@@ -114,10 +114,6 @@ module Tonkachi
     # init transpose table node
     transpose_table_node = Nokogiri::XML::Node.new('table', table_node)
     
-    # add attributes of original table (only for parsing)
-    transpose_table_node.set_attribute('rooter', table_node.attr('rooter'))
-    transpose_table_node.set_attribute('table_parser_courses', table_node.attr('table_parser_courses'))
-    
     # prepare tr
     num_of_org_col = table_node.at_css('tr').css('th, td').length
     num_of_org_col.times{
